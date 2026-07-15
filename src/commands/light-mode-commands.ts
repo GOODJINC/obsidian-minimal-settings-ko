@@ -3,7 +3,7 @@ import MinimalTheme from '../main';
 export function registerLightModeCommands(plugin: MinimalTheme) {
   plugin.addCommand({
     id: 'toggle-minimal-light-default',
-    name: 'Use light mode (default)',
+    name: '라이트 모드 사용(기본)',
     callback: () => {
       plugin.settings.lightStyle = 'minimal-light';
       void plugin.saveData(plugin.settings);
@@ -13,7 +13,7 @@ export function registerLightModeCommands(plugin: MinimalTheme) {
 
   plugin.addCommand({
     id: 'toggle-minimal-light-white',
-    name: 'Use light mode (all white)',
+    name: '라이트 모드 사용(전체 흰색)',
     callback: () => {
       plugin.settings.lightStyle = 'minimal-light-white';
       void plugin.saveData(plugin.settings);
@@ -23,7 +23,7 @@ export function registerLightModeCommands(plugin: MinimalTheme) {
 
   plugin.addCommand({
     id: 'toggle-minimal-light-tonal',
-    name: 'Use light mode (low contrast)',
+    name: '라이트 모드 사용(낮은 대비)',
     callback: () => {
       plugin.settings.lightStyle = 'minimal-light-tonal';
       void plugin.saveData(plugin.settings);
@@ -33,7 +33,7 @@ export function registerLightModeCommands(plugin: MinimalTheme) {
 
   plugin.addCommand({
     id: 'toggle-minimal-light-contrast',
-    name: 'Use light mode (high contrast)',
+    name: '라이트 모드 사용(높은 대비)',
     callback: () => {
       plugin.settings.lightStyle = 'minimal-light-contrast';
       void plugin.saveData(plugin.settings);

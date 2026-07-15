@@ -1,9 +1,9 @@
 {
 	"id": "obsidian-minimal-settings",
-	"name": "Minimal Theme Settings",
-	"version": "8.2.3",
+	"name": "Minimal Theme Settings 한국어",
+	"version": "8.2.3-ko.1",
 	"minAppVersion": "1.11.1",
-	"description": "Change the colors, fonts and features of Minimal Theme.",
+	"description": "Minimal Theme의 색상, 글꼴, 기능을 설정합니다.",
 	"author": "@kepano",
 	"authorUrl": "https://www.twitter.com/kepano",
 	"fundingUrl": "https://www.buymeacoffee.com/kepano",

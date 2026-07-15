@@ -3,7 +3,7 @@ import MinimalTheme from '../main';
 export function registerDarkSchemeCommands(plugin: MinimalTheme) {
   plugin.addCommand({
     id: 'toggle-minimal-atom-dark',
-    name: 'Switch dark color scheme to Atom (dark)',
+    name: '다크 색 구성표를 Atom으로 변경',
     callback: () => {
       plugin.settings.darkScheme = 'minimal-atom-dark';
       void plugin.saveData(plugin.settings);
@@ -14,7 +14,7 @@ export function registerDarkSchemeCommands(plugin: MinimalTheme) {
 
   plugin.addCommand({
     id: 'toggle-minimal-ayu-dark',
-    name: 'Switch dark color scheme to Ayu (dark)',
+    name: '다크 색 구성표를 Ayu로 변경',
     callback: () => {
       plugin.settings.darkScheme = 'minimal-ayu-dark';
       void plugin.saveData(plugin.settings);
@@ -25,7 +25,7 @@ export function registerDarkSchemeCommands(plugin: MinimalTheme) {
 
   plugin.addCommand({
     id: 'toggle-minimal-catppuccin-dark',
-    name: 'Switch dark color scheme to Catppuccin (dark)',
+    name: '다크 색 구성표를 Catppuccin으로 변경',
     callback: () => {
       plugin.settings.darkScheme = 'minimal-catppuccin-dark';
       void plugin.saveData(plugin.settings);
@@ -36,7 +36,7 @@ export function registerDarkSchemeCommands(plugin: MinimalTheme) {
 
   plugin.addCommand({
     id: 'toggle-minimal-dracula-dark',
-    name: 'Switch dark color scheme to Dracula (dark)',
+    name: '다크 색 구성표를 Dracula로 변경',
     callback: () => {
       plugin.settings.darkScheme = 'minimal-dracula-dark';
       void plugin.saveData(plugin.settings);
@@ -47,7 +47,7 @@ export function registerDarkSchemeCommands(plugin: MinimalTheme) {
 
   plugin.addCommand({
     id: 'toggle-minimal-default-dark',
-    name: 'Switch dark color scheme to default (dark)',
+    name: '다크 색 구성표를 기본으로 변경',
     callback: () => {
       plugin.settings.darkScheme = 'minimal-default-dark';
       void plugin.saveData(plugin.settings);
@@ -58,7 +58,7 @@ export function registerDarkSchemeCommands(plugin: MinimalTheme) {
 
   plugin.addCommand({
     id: 'toggle-minimal-eink-dark',
-    name: 'Switch dark color scheme to E-ink (dark)',
+    name: '다크 색 구성표를 E-ink로 변경',
     callback: () => {
       plugin.settings.darkScheme = 'minimal-eink-dark';
       void plugin.saveData(plugin.settings);
@@ -69,7 +69,7 @@ export function registerDarkSchemeCommands(plugin: MinimalTheme) {
 
   plugin.addCommand({
     id: 'toggle-minimal-everforest-dark',
-    name: 'Switch dark color scheme to Everforest (dark)',
+    name: '다크 색 구성표를 Everforest로 변경',
     callback: () => {
       plugin.settings.darkScheme = 'minimal-everforest-dark';
       void plugin.saveData(plugin.settings);
@@ -80,7 +80,7 @@ export function registerDarkSchemeCommands(plugin: MinimalTheme) {
 
   plugin.addCommand({
     id: 'toggle-minimal-flexoki-dark',
-    name: 'Switch dark color scheme to Flexoki (dark)',
+    name: '다크 색 구성표를 Flexoki로 변경',
     callback: () => {
       plugin.settings.darkScheme = 'minimal-flexoki-dark';
       void plugin.saveData(plugin.settings);
@@ -91,7 +91,7 @@ export function registerDarkSchemeCommands(plugin: MinimalTheme) {
 
   plugin.addCommand({
     id: 'toggle-minimal-gruvbox-dark',
-    name: 'Switch dark color scheme to Gruvbox (dark)',
+    name: '다크 색 구성표를 Gruvbox로 변경',
     callback: () => {
       plugin.settings.darkScheme = 'minimal-gruvbox-dark';
       void plugin.saveData(plugin.settings);
@@ -102,7 +102,7 @@ export function registerDarkSchemeCommands(plugin: MinimalTheme) {
 
   plugin.addCommand({
     id: 'toggle-minimal-macos-dark',
-    name: 'Switch dark color scheme to macOS (dark)',
+    name: '다크 색 구성표를 macOS로 변경',
     callback: () => {
       plugin.settings.darkScheme = 'minimal-macos-dark';
       void plugin.saveData(plugin.settings);
@@ -113,7 +113,7 @@ export function registerDarkSchemeCommands(plugin: MinimalTheme) {
 
   plugin.addCommand({
     id: 'toggle-minimal-nord-dark',
-    name: 'Switch dark color scheme to Nord (dark)',
+    name: '다크 색 구성표를 Nord로 변경',
     callback: () => {
       plugin.settings.darkScheme = 'minimal-nord-dark';
       void plugin.saveData(plugin.settings);
@@ -124,7 +124,7 @@ export function registerDarkSchemeCommands(plugin: MinimalTheme) {
 
   plugin.addCommand({
     id: 'toggle-minimal-notion-dark',
-    name: 'Switch dark color scheme to Sky (dark)',
+    name: '다크 색 구성표를 하늘로 변경',
     callback: () => {
       plugin.settings.darkScheme = 'minimal-notion-dark';
       void plugin.saveData(plugin.settings);
@@ -135,7 +135,7 @@ export function registerDarkSchemeCommands(plugin: MinimalTheme) {
 
   plugin.addCommand({
     id: 'toggle-minimal-rose-pine-dark',
-    name: 'Switch dark color scheme to Rosé Pine (dark)',
+    name: '다크 색 구성표를 Rosé Pine으로 변경',
     callback: () => {
       plugin.settings.darkScheme = 'minimal-rose-pine-dark';
       void plugin.saveData(plugin.settings);
@@ -146,7 +146,7 @@ export function registerDarkSchemeCommands(plugin: MinimalTheme) {
 
   plugin.addCommand({
     id: 'toggle-minimal-solarized-dark',
-    name: 'Switch dark color scheme to Solarized (dark)',
+    name: '다크 색 구성표를 Solarized로 변경',
     callback: () => {
       plugin.settings.darkScheme = 'minimal-solarized-dark';
       void plugin.saveData(plugin.settings);
@@ -157,7 +157,7 @@ export function registerDarkSchemeCommands(plugin: MinimalTheme) {
 
   plugin.addCommand({
     id: 'toggle-minimal-things-dark',
-    name: 'Switch dark color scheme to Things (dark)',
+    name: '다크 색 구성표를 Things로 변경',
     callback: () => {
       plugin.settings.darkScheme = 'minimal-things-dark';
       void plugin.saveData(plugin.settings);

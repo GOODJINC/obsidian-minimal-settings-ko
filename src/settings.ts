@@ -83,45 +83,45 @@ export class MinimalSettingsTab extends PluginSettingTab {
 
     // Color scheme section
     const colorSchemeDesc = createFragment();
-    colorSchemeDesc.appendText('For more options, use the ');
+    colorSchemeDesc.appendText('더 많은 옵션은 ');
     colorSchemeDesc.appendChild(
       createEl('a', {
         text: 'Style Settings',
         href: 'obsidian://show-plugin?id=obsidian-style-settings',
       })
     );
-    colorSchemeDesc.appendText(' plugin. See ');
+    colorSchemeDesc.appendText(' 플러그인에서 설정할 수 있습니다. 자세한 내용은 ');
     colorSchemeDesc.appendChild(
       createEl('a', {
-        text: 'Documentation',
+        text: '문서',
         href: 'https://minimal.guide/features/color-schemes',
       })
     );
-    colorSchemeDesc.appendText(' for details.');
+    colorSchemeDesc.appendText('를 참고하세요.');
 
     const colorHeading = createFragment();
-    colorHeading.createDiv({cls: 'setting-item-name', text: 'Color scheme'});
+    colorHeading.createDiv({cls: 'setting-item-name', text: '색 구성표'});
     const colorDesc = colorHeading.createDiv({cls: 'setting-item-description'});
     colorDesc.appendChild(colorSchemeDesc);
 
     new SettingGroup(containerEl)
       .setHeading(colorHeading)
       .addSetting(setting => setting
-        .setName('Light mode color scheme')
-        .setDesc('Preset color options for light mode.')
+        .setName('라이트 모드 색 구성표')
+        .setDesc('라이트 모드에 적용할 미리 설정된 색상입니다.')
         .addDropdown(dropdown => dropdown
-          .addOption('minimal-default-light','Default')
+          .addOption('minimal-default-light','기본')
           .addOption('minimal-atom-light','Atom')
           .addOption('minimal-ayu-light','Ayu')
           .addOption('minimal-catppuccin-light','Catppuccin')
-          .addOption('minimal-eink-light','E-ink (beta)')
+          .addOption('minimal-eink-light','E-ink (베타)')
           .addOption('minimal-everforest-light','Everforest')
           .addOption('minimal-flexoki-light','Flexoki')
           .addOption('minimal-gruvbox-light','Gruvbox')
           .addOption('minimal-macos-light','macOS')
           .addOption('minimal-nord-light','Nord')
           .addOption('minimal-rose-pine-light','Rosé Pine')
-          .addOption('minimal-notion-light','Sky')
+          .addOption('minimal-notion-light','하늘')
           .addOption('minimal-solarized-light','Solarized')
           .addOption('minimal-things-light','Things')
           .setValue(this.plugin.settings.lightScheme)
@@ -131,13 +131,13 @@ export class MinimalSettingsTab extends PluginSettingTab {
             this.plugin.updateLightScheme();
           })))
       .addSetting(setting => setting
-        .setName('Light mode background contrast')
-        .setDesc('Level of contrast between sidebar and main content.')
+        .setName('라이트 모드 배경 대비')
+        .setDesc('사이드바와 본문 영역 사이의 대비 수준입니다.')
         .addDropdown(dropdown => dropdown
-          .addOption('minimal-light','Default')
-          .addOption('minimal-light-white','All white')
-          .addOption('minimal-light-tonal','Low contrast')
-          .addOption('minimal-light-contrast','High contrast')
+          .addOption('minimal-light','기본')
+          .addOption('minimal-light-white','전체 흰색')
+          .addOption('minimal-light-tonal','낮은 대비')
+          .addOption('minimal-light-contrast','높은 대비')
           .setValue(this.plugin.settings.lightStyle)
           .onChange((value) => {
             this.plugin.settings.lightStyle = value;
@@ -145,22 +145,22 @@ export class MinimalSettingsTab extends PluginSettingTab {
             this.plugin.updateLightStyle();
           })))
       .addSetting(setting => setting
-        .setName('Dark mode color scheme')
-        .setDesc('Preset colors options for dark mode.')
+        .setName('다크 모드 색 구성표')
+        .setDesc('다크 모드에 적용할 미리 설정된 색상입니다.')
         .addDropdown(dropdown => dropdown
-          .addOption('minimal-default-dark','Default')
+          .addOption('minimal-default-dark','기본')
           .addOption('minimal-atom-dark','Atom')
           .addOption('minimal-ayu-dark','Ayu')
           .addOption('minimal-catppuccin-dark','Catppuccin')
           .addOption('minimal-dracula-dark','Dracula')
-          .addOption('minimal-eink-dark','E-ink (beta)')
+          .addOption('minimal-eink-dark','E-ink (베타)')
           .addOption('minimal-everforest-dark','Everforest')
           .addOption('minimal-flexoki-dark','Flexoki')
           .addOption('minimal-gruvbox-dark','Gruvbox')
           .addOption('minimal-macos-dark','macOS')
           .addOption('minimal-nord-dark','Nord')
           .addOption('minimal-rose-pine-dark','Rosé Pine')
-          .addOption('minimal-notion-dark','Sky')
+          .addOption('minimal-notion-dark','하늘')
           .addOption('minimal-solarized-dark','Solarized')
           .addOption('minimal-things-dark','Things')
           .setValue(this.plugin.settings.darkScheme)
@@ -170,12 +170,12 @@ export class MinimalSettingsTab extends PluginSettingTab {
             this.plugin.updateDarkScheme();
           })))
       .addSetting(setting => setting
-        .setName('Dark mode background contrast')
-        .setDesc('Level of contrast between sidebar and main content.')
+        .setName('다크 모드 배경 대비')
+        .setDesc('사이드바와 본문 영역 사이의 대비 수준입니다.')
         .addDropdown(dropdown => dropdown
-          .addOption('minimal-dark','Default')
-          .addOption('minimal-dark-tonal','Low contrast')
-          .addOption('minimal-dark-black','True black')
+          .addOption('minimal-dark','기본')
+          .addOption('minimal-dark-tonal','낮은 대비')
+          .addOption('minimal-dark-black','순수 검정')
           .setValue(this.plugin.settings.darkStyle)
           .onChange((value) => {
             this.plugin.settings.darkStyle = value;
@@ -185,10 +185,10 @@ export class MinimalSettingsTab extends PluginSettingTab {
 
     // Features section
     new SettingGroup(containerEl)
-      .setHeading('Features')
+      .setHeading('기능')
       .addSetting(setting => setting
-        .setName('Text labels for primary navigation')
-        .setDesc('Navigation items in the left sidebar uses text labels.')
+        .setName('주요 탐색 메뉴에 텍스트 레이블 표시')
+        .setDesc('왼쪽 사이드바의 탐색 메뉴에 텍스트 레이블을 표시합니다.')
         .addToggle(toggle => toggle.setValue(this.plugin.settings.labeledNav)
           .onChange((value) => {
             this.plugin.settings.labeledNav = value;
@@ -196,8 +196,8 @@ export class MinimalSettingsTab extends PluginSettingTab {
             this.plugin.refresh();
           })))
       .addSetting(setting => setting
-        .setName('Colorful window frame')
-        .setDesc('The top area of the app uses your accent color.')
+        .setName('창 프레임에 강조 색상 적용')
+        .setDesc('앱 상단 영역에 강조 색상을 적용합니다.')
         .addToggle(toggle => toggle.setValue(this.plugin.settings.colorfulFrame)
           .onChange((value) => {
             this.plugin.settings.colorfulFrame = value;
@@ -205,8 +205,8 @@ export class MinimalSettingsTab extends PluginSettingTab {
             this.plugin.refresh();
           })))
       .addSetting(setting => setting
-        .setName('Colorful active states')
-        .setDesc('Active file and menu items use your accent color.')
+        .setName('활성 항목에 강조 색상 적용')
+        .setDesc('활성 파일과 메뉴 항목에 강조 색상을 적용합니다.')
         .addToggle(toggle => toggle.setValue(this.plugin.settings.colorfulActiveStates)
           .onChange((value) => {
             this.plugin.settings.colorfulActiveStates = value;
@@ -214,8 +214,8 @@ export class MinimalSettingsTab extends PluginSettingTab {
             this.plugin.refresh();
           })))
       .addSetting(setting => setting
-        .setName('Colorful headings')
-        .setDesc('Headings use a different color for each size.')
+        .setName('다채로운 제목 색상')
+        .setDesc('제목 크기마다 서로 다른 색상을 적용합니다.')
         .addToggle(toggle => toggle.setValue(this.plugin.settings.colorfulHeadings)
           .onChange((value) => {
             this.plugin.settings.colorfulHeadings = value;
@@ -223,8 +223,8 @@ export class MinimalSettingsTab extends PluginSettingTab {
             this.plugin.refresh();
           })))
       .addSetting(setting => setting
-        .setName('Minimal status bar')
-        .setDesc('Turn off to use full-width status bar.')
+        .setName('미니멀 상태 표시줄')
+        .setDesc('끄면 전체 너비의 상태 표시줄을 사용합니다.')
         .addToggle(toggle => toggle.setValue(this.plugin.settings.minimalStatus)
           .onChange((value) => {
             this.plugin.settings.minimalStatus = value;
@@ -232,8 +232,8 @@ export class MinimalSettingsTab extends PluginSettingTab {
             this.plugin.refresh();
           })))
       .addSetting(setting => setting
-        .setName('Trim file names in sidebars')
-        .setDesc('Use ellipses to fit file names on a single line.')
+        .setName('사이드바에서 파일 이름 줄이기')
+        .setDesc('파일 이름이 한 줄에 들어가도록 말줄임표를 사용합니다.')
         .addToggle(toggle => toggle.setValue(this.plugin.settings.trimNames)
           .onChange((value) => {
             this.plugin.settings.trimNames = value;
@@ -241,8 +241,8 @@ export class MinimalSettingsTab extends PluginSettingTab {
             this.plugin.refresh();
           })))
       .addSetting(setting => setting
-        .setName('Workspace borders')
-        .setDesc('Display divider lines between workspace elements.')
+        .setName('작업 공간 테두리')
+        .setDesc('작업 공간 요소 사이에 구분선을 표시합니다.')
         .addToggle(toggle => toggle.setValue(this.plugin.settings.bordersToggle)
           .onChange((value) => {
             this.plugin.settings.bordersToggle = value;
@@ -250,8 +250,8 @@ export class MinimalSettingsTab extends PluginSettingTab {
             this.plugin.refresh();
           })))
       .addSetting(setting => setting
-        .setName('Focus mode')
-        .setDesc('Hide tab bar and status bar, hover to display. Can be toggled via hotkey.')
+        .setName('집중 모드')
+        .setDesc('탭 표시줄과 상태 표시줄을 숨기며, 마우스를 올리면 표시합니다. 단축키로 전환할 수 있습니다.')
         .addToggle(toggle => toggle.setValue(this.plugin.settings.focusMode)
           .onChange((value) => {
             this.plugin.settings.focusMode = value;
@@ -259,8 +259,8 @@ export class MinimalSettingsTab extends PluginSettingTab {
             this.plugin.refresh();
           })))
       .addSetting(setting => setting
-        .setName('Underline internal links')
-        .setDesc('Show underlines on internal links.')
+        .setName('내부 링크 밑줄')
+        .setDesc('내부 링크에 밑줄을 표시합니다.')
         .addToggle(toggle => toggle.setValue(this.plugin.settings.underlineInternal)
           .onChange((value) => {
             this.plugin.settings.underlineInternal = value;
@@ -268,8 +268,8 @@ export class MinimalSettingsTab extends PluginSettingTab {
             this.plugin.refresh();
           })))
       .addSetting(setting => setting
-        .setName('Underline external links')
-        .setDesc('Show underlines on external links.')
+        .setName('외부 링크 밑줄')
+        .setDesc('외부 링크에 밑줄을 표시합니다.')
         .addToggle(toggle => toggle.setValue(this.plugin.settings.underlineExternal)
           .onChange((value) => {
             this.plugin.settings.underlineExternal = value;
@@ -277,8 +277,8 @@ export class MinimalSettingsTab extends PluginSettingTab {
             this.plugin.refresh();
           })))
       .addSetting(setting => setting
-        .setName('Maximize media')
-        .setDesc('Images and videos fill the width of the line.')
+        .setName('미디어 최대 너비')
+        .setDesc('이미지와 동영상이 줄의 전체 너비를 채웁니다.')
         .addToggle(toggle => toggle.setValue(this.plugin.settings.fullWidthMedia)
           .onChange((value) => {
             this.plugin.settings.fullWidthMedia = value;
@@ -288,25 +288,25 @@ export class MinimalSettingsTab extends PluginSettingTab {
 
     // Layout section
     const layoutDesc = createFragment();
-    layoutDesc.appendText('These options can also be defined per file. See ');
+    layoutDesc.appendText('이 옵션은 파일별로도 설정할 수 있습니다. 자세한 내용은 ');
     layoutDesc.appendChild(
       createEl('a', {
-        text: 'Documentation',
+        text: '문서',
         href: 'https://minimal.guide/features/block-width',
       })
     );
-    layoutDesc.appendText(' for details.');
+    layoutDesc.appendText('를 참고하세요.');
 
     const layoutHeading = createFragment();
-    layoutHeading.createDiv({cls: 'setting-item-name', text: 'Layout'});
+    layoutHeading.createDiv({cls: 'setting-item-name', text: '레이아웃'});
     const layoutDescDiv = layoutHeading.createDiv({cls: 'setting-item-description'});
     layoutDescDiv.appendChild(layoutDesc);
 
     new SettingGroup(containerEl)
       .setHeading(layoutHeading)
       .addSetting(setting => setting
-        .setName('Image grids')
-        .setDesc('Turn consecutive images into columns — to make a new row, add an extra line break between images.')
+        .setName('이미지 격자')
+        .setDesc('연속된 이미지를 열로 배치합니다. 새 행을 만들려면 이미지 사이에 빈 줄을 하나 더 추가하세요.')
         .addToggle(toggle => toggle.setValue(this.plugin.settings.imgGrid)
           .onChange((value) => {
             this.plugin.settings.imgGrid = value;
@@ -314,13 +314,13 @@ export class MinimalSettingsTab extends PluginSettingTab {
             this.plugin.refresh();
           })))
       .addSetting(setting => setting
-        .setName('Chart width')
-        .setDesc('Default width for chart blocks.')
+        .setName('차트 너비')
+        .setDesc('차트 블록의 기본 너비입니다.')
         .addDropdown(dropdown => dropdown
-          .addOption('chart-default-width','Default')
-          .addOption('chart-wide','Wide line width')
-          .addOption('chart-max','Maximum line width')
-          .addOption('chart-100','100% pane width')
+          .addOption('chart-default-width','기본')
+          .addOption('chart-wide','넓은 줄 너비')
+          .addOption('chart-max','최대 줄 너비')
+          .addOption('chart-100','창 너비의 100%')
           .setValue(this.plugin.settings.chartWidth)
           .onChange((value) => {
             this.plugin.settings.chartWidth = value;
@@ -328,13 +328,13 @@ export class MinimalSettingsTab extends PluginSettingTab {
             this.plugin.refresh();
           })))
       .addSetting(setting => setting
-        .setName('Iframe width')
-        .setDesc('Default width for iframe blocks.')
+        .setName('iframe 너비')
+        .setDesc('iframe 블록의 기본 너비입니다.')
         .addDropdown(dropdown => dropdown
-          .addOption('iframe-default-width','Default')
-          .addOption('iframe-wide','Wide line width')
-          .addOption('iframe-max','Maximum line width')
-          .addOption('iframe-100','100% pane width')
+          .addOption('iframe-default-width','기본')
+          .addOption('iframe-wide','넓은 줄 너비')
+          .addOption('iframe-max','최대 줄 너비')
+          .addOption('iframe-100','창 너비의 100%')
           .setValue(this.plugin.settings.iframeWidth)
           .onChange((value) => {
             this.plugin.settings.iframeWidth = value;
@@ -342,13 +342,13 @@ export class MinimalSettingsTab extends PluginSettingTab {
             this.plugin.refresh();
           })))
       .addSetting(setting => setting
-        .setName('Image width')
-        .setDesc('Default width for image blocks.')
+        .setName('이미지 너비')
+        .setDesc('이미지 블록의 기본 너비입니다.')
         .addDropdown(dropdown => dropdown
-          .addOption('img-default-width','Default')
-          .addOption('img-wide','Wide line width')
-          .addOption('img-max','Maximum line width')
-          .addOption('img-100','100% pane width')
+          .addOption('img-default-width','기본')
+          .addOption('img-wide','넓은 줄 너비')
+          .addOption('img-max','최대 줄 너비')
+          .addOption('img-100','창 너비의 100%')
           .setValue(this.plugin.settings.imgWidth)
           .onChange((value) => {
             this.plugin.settings.imgWidth = value;
@@ -356,13 +356,13 @@ export class MinimalSettingsTab extends PluginSettingTab {
             this.plugin.refresh();
           })))
       .addSetting(setting => setting
-        .setName('Map width')
-        .setDesc('Default width for map blocks.')
+        .setName('지도 너비')
+        .setDesc('지도 블록의 기본 너비입니다.')
         .addDropdown(dropdown => dropdown
-          .addOption('map-default-width','Default')
-          .addOption('map-wide','Wide line width')
-          .addOption('map-max','Maximum line width')
-          .addOption('map-100','100% pane width')
+          .addOption('map-default-width','기본')
+          .addOption('map-wide','넓은 줄 너비')
+          .addOption('map-max','최대 줄 너비')
+          .addOption('map-100','창 너비의 100%')
           .setValue(this.plugin.settings.mapWidth)
           .onChange((value) => {
             this.plugin.settings.mapWidth = value;
@@ -370,13 +370,13 @@ export class MinimalSettingsTab extends PluginSettingTab {
             this.plugin.refresh();
           })))
       .addSetting(setting => setting
-        .setName('Table width')
-        .setDesc('Default width for table and Dataview blocks.')
+        .setName('표 너비')
+        .setDesc('표와 Dataview 블록의 기본 너비입니다.')
         .addDropdown(dropdown => dropdown
-          .addOption('table-default-width','Default')
-          .addOption('table-wide','Wide line width')
-          .addOption('table-max','Maximum line width')
-          .addOption('table-100','100% pane width')
+          .addOption('table-default-width','기본')
+          .addOption('table-wide','넓은 줄 너비')
+          .addOption('table-max','최대 줄 너비')
+          .addOption('table-100','창 너비의 100%')
           .setValue(this.plugin.settings.tableWidth)
           .onChange((value) => {
             this.plugin.settings.tableWidth = value;
@@ -386,10 +386,10 @@ export class MinimalSettingsTab extends PluginSettingTab {
 
     // Typography section
     new SettingGroup(containerEl)
-      .setHeading('Typography')
+      .setHeading('글꼴')
       .addSetting(setting => setting
-        .setName('Text font size')
-        .setDesc('Used for the main text (default 16).')
+        .setName('본문 글꼴 크기')
+        .setDesc('본문에 사용할 글꼴 크기입니다(기본값: 16).')
         .addText(text => text.setPlaceholder('16')
           .setValue((this.plugin.settings.textNormal || '') + '')
           .onChange((value) => {
@@ -398,8 +398,8 @@ export class MinimalSettingsTab extends PluginSettingTab {
             this.plugin.setFontSize();
           })))
       .addSetting(setting => setting
-        .setName('Small font size')
-        .setDesc('Used for text in the sidebars and tabs (default 13).')
+        .setName('작은 글꼴 크기')
+        .setDesc('사이드바와 탭의 텍스트에 사용할 글꼴 크기입니다(기본값: 13).')
         .addText(text => text.setPlaceholder('13')
           .setValue((this.plugin.settings.textSmall || '') + '')
           .onChange((value) => {
@@ -408,8 +408,8 @@ export class MinimalSettingsTab extends PluginSettingTab {
             this.plugin.refresh();
           })))
       .addSetting(setting => setting
-        .setName('Line height')
-        .setDesc('Line height of text (default 1.5).')
+        .setName('줄 간격')
+        .setDesc('텍스트의 줄 간격입니다(기본값: 1.5).')
         .addText(text => text.setPlaceholder('1.5')
           .setValue((this.plugin.settings.lineHeight || '') + '')
           .onChange((value) => {
@@ -418,8 +418,8 @@ export class MinimalSettingsTab extends PluginSettingTab {
             this.plugin.refresh();
           })))
       .addSetting(setting => setting
-        .setName('Normal line width')
-        .setDesc('Number of characters per line (default 40).')
+        .setName('일반 줄 너비')
+        .setDesc('한 줄에 표시할 문자 수입니다(기본값: 40).')
         .addText(text => text.setPlaceholder('40')
           .setValue((this.plugin.settings.lineWidth || '') + '')
           .onChange((value) => {
@@ -428,8 +428,8 @@ export class MinimalSettingsTab extends PluginSettingTab {
             this.plugin.refresh();
           })))
       .addSetting(setting => setting
-        .setName('Wide line width')
-        .setDesc('Number of characters per line for wide elements (default 50).')
+        .setName('넓은 줄 너비')
+        .setDesc('넓은 요소에 표시할 한 줄당 문자 수입니다(기본값: 50).')
         .addText(text => text.setPlaceholder('50')
           .setValue((this.plugin.settings.lineWidthWide || '') + '')
           .onChange((value) => {
@@ -438,8 +438,8 @@ export class MinimalSettingsTab extends PluginSettingTab {
             this.plugin.refresh();
           })))
       .addSetting(setting => setting
-        .setName('Maximum line width %')
-        .setDesc('Percentage of space inside a pane that a line can fill (default 88).')
+        .setName('최대 줄 너비(%)')
+        .setDesc('창 안에서 줄이 차지할 수 있는 공간의 비율입니다(기본값: 88).')
         .addText(text => text.setPlaceholder('88')
           .setValue((this.plugin.settings.maxWidth || '') + '')
           .onChange((value) => {
@@ -448,8 +448,8 @@ export class MinimalSettingsTab extends PluginSettingTab {
             this.plugin.refresh();
           })))
       .addSetting(setting => setting
-        .setName('Editor font')
-        .setDesc('Overrides the text font defined in Obsidian appearance settings when in edit mode.')
+        .setName('편집기 글꼴')
+        .setDesc('편집 모드에서 Obsidian 모양 설정의 본문 글꼴을 이 글꼴로 대체합니다.')
         .addText(text => text.setPlaceholder('')
           .setValue((this.plugin.settings.editorFont || '') + '')
           .onChange((value) => {
