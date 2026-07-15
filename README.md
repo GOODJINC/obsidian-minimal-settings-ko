@@ -4,6 +4,12 @@
 
 이 프로젝트는 원본의 [MIT 라이선스](LICENSE)를 따르며, 원작은 [Steph Ango (@kepano)](https://github.com/kepano)에게 있습니다.
 
+## 버전 정보
+
+- 원본 기준 버전: `8.2.3`
+- 현재 한국어판 버전: `8.2.3-ko.1`
+- 최신 릴리즈: [8.2.3-ko.1](https://github.com/GOODJINC/obsidian-minimal-settings-ko/releases/tag/8.2.3-ko.1)
+
 ## 문서
 
 - [한국어 전체 문서](README.ko.md)
